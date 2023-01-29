@@ -6,6 +6,8 @@ import { TabComponent } from './tab/tab.component';
 import { InputComponent } from './input/input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
+import { AlertComponent } from './alert/alert.component';
+import { EventBlockerDirective } from './directives/event-blocker.directive';
 // import { ModalService } from "../services/modal.service";
 
 @NgModule({
@@ -13,7 +15,9 @@ import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
     ModalComponent,
     TabsContainerComponent,
     TabComponent,
-    InputComponent
+    InputComponent,
+    AlertComponent,
+    EventBlockerDirective
   ],
   imports: [
     CommonModule,
@@ -25,8 +29,13 @@ import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
     ModalComponent,
     TabsContainerComponent,
     TabComponent,
-    InputComponent
+    InputComponent,
+    AlertComponent,
+    EventBlockerDirective
   ],
-  // providers: [ModalService]
+  providers: [
+    // ModalService,
+    provideEnvironmentNgxMask()
+  ]
 })
 export class SharedModule { }
